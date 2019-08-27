@@ -44,4 +44,7 @@ dependencies {
     //android6.0 permissions
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+
+    //markdown解析器
+    implementation 'com.github.mukeshsolanki:MarkdownView-Android:latest.release'
 }

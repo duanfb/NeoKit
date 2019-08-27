@@ -6,14 +6,19 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="horizontal"
-    android:padding="1dp">
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
+        android:background="@color/colorPrimary"
         android:text="abc"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
