@@ -1,10 +1,12 @@
-package com.neo.kit.activity;
+package com.neo.kit.android;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
 import com.neo.kit.R;
+import com.neo.kit.main.BaseActivity;
+import com.neo.kit.main.MarkDownActivity;
 
 import butterknife.OnClick;
 
@@ -43,7 +45,8 @@ public class AndroidActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.tv_dagger2, R.id.tv_webView, R.id.tv_rcv})
+    @OnClick({R.id.tv_dagger2, R.id.tv_webView, R.id.tv_rcv, R.id.tv_camera
+            , R.id.tv_zujianhua})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.tv_dagger2:
@@ -54,6 +57,12 @@ public class AndroidActivity extends BaseActivity {
                 break;
             case R.id.tv_rcv:
                 MarkDownActivity.start(mContext, "RecyclerView", "android/RecyclerView.md");
+                break;
+            case R.id.tv_camera:
+                CameraActivity.start(mContext);
+                break;
+            case R.id.tv_zujianhua:
+                MarkDownActivity.start(mContext, "组件化", "android/组件化.md");
                 break;
             default:
                 break;

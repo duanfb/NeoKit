@@ -1,4 +1,4 @@
-package com.neo.kit.activity;
+package com.neo.kit.main;
 
 import android.content.Context;
 import android.content.Intent;

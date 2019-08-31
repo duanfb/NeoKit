@@ -1,4 +1,4 @@
-package com.neo.kit.activity;
+package com.neo.kit.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.neo.baselib.util.MaterialDialogUtils;
 import com.neo.kit.R;
 import com.neo.kit.adapter.MainAdapter;
+import com.neo.kit.android.AndroidActivity;
 
 import java.util.Arrays;
 

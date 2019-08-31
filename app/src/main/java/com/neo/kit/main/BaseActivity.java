@@ -1,4 +1,4 @@
-package com.neo.kit.activity;
+package com.neo.kit.main;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import com.neo.baselib.util.ToastUtil;
 import com.neo.kit.R;
 

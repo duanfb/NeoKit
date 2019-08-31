@@ -1,7 +1,55 @@
-### 横向ViewPager和横向RecyclerView直接的滑动冲突
+### 去掉边界阴影
+
+    android:fadingEdge="none"
+    android:overScrollMode="never"
+    
+### 解决RecyclerView和ScrollView的冲突
+    
+    1.recyclerView需要一个父布局，并添加属性android:descendantFocusability="blocksDescendants"
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        //务必添加此属性
+        android:descendantFocusability="blocksDescendants">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyler_view"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    2.mRecyclerView.setLayoutManager(new FullyLinearLayoutManager(mContext));
+    mRecyclerView.setNestedScrollingEnabled(false);//限制自己的滑动，紧依靠ScrollView滑动
+    同样：
+    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this) {
+        @Override
+        public boolean canScrollVertically() {
+            //返回false限制自身滑动
+            return false;
+        }
+    };
+    
+### 滚动到底部判断
+
+    RecyclerView.canScrollVertically(1)的值表示是否能向上滚动，false表示已经滚动到底部
+    RecyclerView.canScrollVertically(-1)的值表示是否能向下滚动，false表示已经滚动到顶部
+    
+    public static boolean isSlideToBottom(RecyclerView recyclerView) {    
+       if (recyclerView == null) return false; 
+       if (recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset() 
+            >= recyclerView.computeVerticalScrollRange())   
+         return true;  
+       return false;
+    }
+
+
+
+### TODO 横向ViewPager和横向RecyclerView直接的滑动冲突
 
     
-
 ### 纵向的RecyclerView(ListView)与横向RecyclerView之间的滑动冲突
 
 ### 优化体验和入坑
