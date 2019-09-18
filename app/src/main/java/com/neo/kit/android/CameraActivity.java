@@ -17,6 +17,10 @@ import android.widget.ImageView;
 
 import androidx.core.content.FileProvider;
 
+import com.lzy.imagepicker.ImagePicker;
+import com.lzy.imagepicker.loader.GlideImageLoader;
+import com.lzy.imagepicker.ui.ImageGridActivity;
+import com.lzy.imagepicker.view.CropImageView;
 import com.neo.baselib.util.MaterialDialogUtils;
 import com.neo.kit.BuildConfig;
 import com.neo.kit.R;
@@ -53,10 +57,7 @@ public class CameraActivity extends BaseActivity {
         return R.layout.activity_camera;
     }
 
-    @Override
-    protected void initTop() {
-
-    }
+    private int IMAGE_PICKER = 3;
 
     @Override
     protected void initView() {
@@ -68,7 +69,14 @@ public class CameraActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.tv_camera, R.id.tv_album})
+    private int REQUEST_CODE_SELECT = 4;
+
+    @Override
+    protected void initTop() {
+        setTitle("拍照");
+    }
+
+    @OnClick({R.id.tv_camera, R.id.tv_album, R.id.tv_wx_camera, R.id.tv_wx_album})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.tv_camera:
@@ -86,10 +94,50 @@ public class CameraActivity extends BaseActivity {
             case R.id.tv_album:
                 openGallery();
                 break;
+            case R.id.tv_wx_camera:
+                new RxPermissions(this).request(Manifest.permission.CAMERA)
+                        .subscribe(aBoolean -> {
+                            if (aBoolean) {
+//                                    openCamera();
+                                openIamgePickerCamra();
+                            } else {
+                                // 部分权限未获取
+                                MaterialDialogUtils.showSingleButton(mContext, "Storage permission" +
+                                        "is needed to import images", null);
+                            }
+                        });
+                break;
+            case R.id.tv_wx_album:
+                openImagePicker();
+                break;
             default:
                 break;
         }
     }
+
+    private void openImagePicker() {
+        ImagePicker imagePicker = ImagePicker.getInstance();
+        imagePicker.setImageLoader(new GlideImageLoader());   //设置图片加载器
+        imagePicker.setShowCamera(true);  //显示拍照按钮
+        imagePicker.setCrop(true);        //允许裁剪（单选才有效）
+        imagePicker.setSaveRectangle(true); //是否按矩形区域保存
+        imagePicker.setSelectLimit(9);    //选中数量限制
+        imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
+        imagePicker.setFocusWidth(800);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(800);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setOutPutX(1000);//保存文件的宽度。单位像素
+        imagePicker.setOutPutY(1000);//保存文件的高度。单位像素
+
+        Intent intent = new Intent(this, ImageGridActivity.class);
+        startActivityForResult(intent, IMAGE_PICKER);
+    }
+
+    private void openIamgePickerCamra() {
+        Intent intent = new Intent(this, ImageGridActivity.class);
+        intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
+        startActivityForResult(intent, REQUEST_CODE_SELECT);
+    }
+
 
     /**
      * 打开相机

@@ -8,6 +8,10 @@
     android:orientation="horizontal"
     android:padding="8dp">
 
+    <!--android:background="?android:attr/selectableItemBackground"波纹有边界-->
+
+    <!--android:background="?android:attr/selectableItemBackgroundBorderless"波纹超出边界-->
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="0dp"

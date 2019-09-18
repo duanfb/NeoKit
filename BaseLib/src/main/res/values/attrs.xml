@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ClearEditText -->
+    <declare-styleable name="ClearEditText">
+        <attr name="separator" format="string" />
+        <attr name="markerEnable" format="boolean" />
+        <attr name="iOSStyleEnable" format="boolean" />
+        <attr name="disableEmoji" />
+        <attr name="showMarkerTime">
+            <enum name="after" value="0" />
+            <enum name="before" value="1" />
+            <enum name="always" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <!--BottomBarLayout自定义属性-->
+    <declare-styleable name="BottomBarLayout">
+        <!--图标下面文字颜色-->
+        <attr name="textColorOn" format="color" />
+        <!--图标下面文字颜色-->
+        <attr name="textColorOff" format="color" />
+        <!--默认文本数组-->
+        <attr name="defaultText" format="reference" />
+        <!--默认图标数组-->
+        <attr name="defaultIconSelected" format="reference" />
+        <!--默认图标数组-->
+        <attr name="defaultIconUnSelected" format="reference" />
+        <!--item选中背景颜色-->
+        <attr name="bgColorOn" format="color" />
+        <!--item未选中背景颜色-->
+        <attr name="bgColorOff" format="color" />
+    </declare-styleable>
+</resources>

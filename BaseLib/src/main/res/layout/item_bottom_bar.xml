@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Con xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_btn_borderless"
+    android:clipToPadding="false"
+    android:padding="6dp">
+
+    <ImageView
+        android:id="@+id/iv_tab_item_img"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/ctv_tab_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_tab_item_img"
+        tools:text="首页" />
+
+
+    <TextView
+        android:id="@+id/tv_red_point"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:background="@drawable/shape_red_dot"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:translationX="-2dp"
+        android:translationY="-2dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/iv_tab_item_img"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9999"
+        tools:visibility="visible" />
+
+</Con>

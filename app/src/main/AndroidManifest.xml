@@ -27,6 +27,9 @@
         <activity android:name=".android.AndroidActivity" />
         <activity android:name=".main.MarkDownActivity" />
         <activity android:name=".android.CameraActivity" />
+        <activity android:name=".gaofang.GaoFangActivity" />
+        <activity android:name=".gaofang.ViewFlipperActivity" />
+        <activity android:name=".android.RecyclerViewActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

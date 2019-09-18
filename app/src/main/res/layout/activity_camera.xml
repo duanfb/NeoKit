@@ -19,6 +19,20 @@
         android:layout_marginTop="36dp"
         android:text="相册" />
 
+    <Button
+        android:id="@+id/tv_wx_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="仿微信拍照" />
+
+    <Button
+        android:id="@+id/tv_wx_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="仿微信相册" />
+
     <ImageView
         android:id="@+id/iv_img"
         android:layout_width="match_parent"
