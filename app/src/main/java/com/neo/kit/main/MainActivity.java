@@ -36,7 +36,8 @@ public class MainActivity extends BaseActivity
             "Java",
             "设计模式",
             "数据库",
-            "高仿"
+            "高仿",
+            "其他"
     };
 
     @BindView(R.id.drawer_layout)
@@ -89,6 +90,9 @@ public class MainActivity extends BaseActivity
                     AndroidActivity.start(mContext, mAdapter.getData().get(position));
                     break;
                 case "高仿":
+                    GaoFangActivity.start(mContext);
+                    break;
+                case "其他":
                     GaoFangActivity.start(mContext);
                     break;
                 default:
