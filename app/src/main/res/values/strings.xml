@@ -13,4 +13,16 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+
+    <!--    社交软件格式化时间-->
+    <string name="date_just_now">刚刚</string>
+    <string name="date_minute_ago">%d分钟前</string>
+    <string name="date_hour_ago">%d小时前</string>
+    <string name="date_today">今天</string>
+    <string name="date_yesterday">昨天</string>
+    <string name="date_the_day_before_yesterday">前天</string>
+    <string name="date_format">M/d</string>
+    <string name="date_earlier">较早</string>
+
 </resources>

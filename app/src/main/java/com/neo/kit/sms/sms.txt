@@ -1,0 +1,10 @@
+1.监听短信
+
+
+遇到的问题
+
+监听广播不靠谱
+手机设置应用权限管理：允许通知类短信
+onChange方法调用2次的问题
+    复写：public void onChange(boolean selfChange, Uri uri)方法，通过uri来区分
+    https://blog.csdn.net/QingSheng33/article/details/78723086
