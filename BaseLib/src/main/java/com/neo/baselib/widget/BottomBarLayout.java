@@ -2,6 +2,8 @@ package com.neo.baselib.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.neo.baselib.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * @author neo.duan
@@ -123,7 +126,7 @@ public class BottomBarLayout extends LinearLayout {
             this.addView(itemView);
         }
         // 默认第0个选中,其他不选中
-        setItemSelected(0);
+        setItemSelected(mCurrentPosition);
     }
 
     public String[] getTextArr() {
@@ -132,6 +135,24 @@ public class BottomBarLayout extends LinearLayout {
 
     public void setTextArr(String[] mTextArr) {
         this.mTextArr = mTextArr;
+    }
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        Parcelable superData = super.onSaveInstanceState();
+        bundle.putParcelable("bottom_bar_data", superData);
+        bundle.putInt("position", mCurrentPosition);
+        return bundle;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        Bundle bundle = (Bundle) state;
+        Parcelable superData = bundle.getParcelable("bottom_bar_data");
+        mCurrentPosition = bundle.getInt("position");
+        setItemSelected(mCurrentPosition);
+        super.onRestoreInstanceState(superData);
     }
 
     /**

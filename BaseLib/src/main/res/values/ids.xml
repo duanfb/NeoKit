@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--用于XImageVIew tag key-->
+    <item name="url_tag" type="id" />
+
+    <item name="BaseQuickAdapter_viewholder_support" type="id" />
+    <item name="BaseQuickAdapter_swiping_support" type="id" />
+    <item name="BaseQuickAdapter_dragging_support" type="id" />
+
+    <!--滑动菜单-->
+    <item name="smContentView" type="id" />
+    <item name="smMenuViewLeft" type="id" />
+    <item name="smMenuViewRight" type="id" />
+    <item name="smMenuViewTop" type="id" />
+    <item name="smMenuViewBottom" type="id" />
+
+    <!--顶部title id-->
+    <item name="fl_top_bar_left_container" type="id" />
+    <item name="fl_top_bar_title_container" type="id" />
+    <item name="fl_top_bar_right_container" type="id" />
+    <item name="view_top_bar_bottom_line" type="id" />
+
+    <!--statusbar-->
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
+</resources>
