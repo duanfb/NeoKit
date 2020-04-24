@@ -33,6 +33,7 @@
         <activity android:name=".gaofang.ViewFlipperActivity" />
         <activity android:name=".android.RecyclerViewActivity" />
         <activity android:name=".gaofang.OtherActivity" />
+        <activity android:name=".classroom.HomeActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
